@@ -16,6 +16,22 @@ FastAPI backend ──► MySQL
 REST API  ◄── Axios ──  React dashboard (map, analytics, admin)
 ```
 
+## Repository layout
+
+```
+backend/    FastAPI service, SQLAlchemy models and the edge-device simulator
+frontend/   React + Vite dashboard (map, analytics, admin pages)
+database/   MySQL schema imported once before starting the backend
+```
+
+| Path | Purpose |
+| --- | --- |
+| `backend/main.py` | API routes for detections, status updates and deletes |
+| `backend/database.py` | SQLAlchemy engine and session setup |
+| `backend/raspberry_pi_simulator.py` | Sends sample detections without the Raspberry Pi |
+| `frontend/src/pages/` | Dashboard, GPSMap, Analytics, Detection and Login screens |
+| `database/schema.sql` | Table definitions for the pothole records |
+
 ## Features
 
 - **Live detection feed** from the edge device
